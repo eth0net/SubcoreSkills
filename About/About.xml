@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>SubcoreInfo</name>
+  <name>SubcoreSkills</name>
   <author>synthe0n</author>
-  <packageId>eth0net.SubcoreInfo</packageId>
+  <packageId>eth0net.SubcoreSkills</packageId>
   <url>steam://url/CommunityFilePage/2919644207</url>
   <supportedVersions>
     <li>1.4</li>
