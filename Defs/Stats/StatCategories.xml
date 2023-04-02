@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatCategoryDef>
+    <defName>SubcoreSkills</defName>
+    <label>SubcoreSkills</label>
+    <displayOrder>13</displayOrder>
+    <displayAllByDefault>true</displayAllByDefault>
+  </StatCategoryDef>
+
+</Defs>
