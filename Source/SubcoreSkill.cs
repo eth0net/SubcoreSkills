@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Text;
 using Verse;
 
 namespace SubcoreSkills
@@ -40,9 +41,9 @@ namespace SubcoreSkills
         public SubcoreSkill(SkillRecord skillRecord)
         {
             Name = skillRecord.def.defName;
-            Level = skillRecord.levelInt;
+            Level = skillRecord.GetUnclampedLevel();
             Passion = skillRecord.passion;
-            Order = (int)skillRecord.def.listOrder;
+            Order = (int)skillRecord.def.listOrder / 10;
         }
 
         /// <summary>
@@ -62,7 +63,21 @@ namespace SubcoreSkills
         /// <returns></returns>
         public StatDrawEntry StatDrawEntry()
         {
-            return new(StatCategoryDefOf.SubcoreSkills, Name, Level.ToString(), "Subcore skill level for " + Name + ".", Order + 200);
+            string levelString = Level.ToString();
+            string passionString = Passion switch
+            {
+                Passion.Major => "++",
+                Passion.Minor => "+",
+                _ => "",
+            };
+
+            StringBuilder sb = new();
+            sb.AppendLine("Subcore skill level for " + Name + ".");
+            sb.AppendLine();
+            sb.AppendLine("Skill: " + levelString);
+            sb.AppendLine("Passion: " + Passion.ToString());
+
+            return new(StatCategoryDefOf.SubcoreSkills, Name, levelString + passionString, sb.ToString(), Order + 300);
         }
     }
 }
