@@ -58,6 +58,7 @@
     <Compile Include="Comps\CompSkillsBase.cs" />
     <Compile Include="Comps\CompSubcoreSkills.cs" />
     <Compile Include="StatCategoryDefOf.cs" />
+    <Compile Include="SubcoreSkill.cs" />
     <Compile Include="SubcoreSkills.cs" />
     <Compile Include="SubcoreSkillsSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

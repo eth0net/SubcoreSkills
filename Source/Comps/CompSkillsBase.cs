@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using SubcoreInfo.Comps;
+﻿using SubcoreInfo.Comps;
 using System.Collections.Generic;
 using Verse;
 
@@ -10,15 +9,14 @@ namespace SubcoreSkills.Comps
         /// <summary>
         /// Skills tracks the skills of the pawn scanned.
         /// </summary>
-        public List<SkillRecord> Skills;
+        public List<SubcoreSkill> Skills;
 
         /// <summary>
         /// PostExposeData is used to save our component state.
         /// </summary>
         public override void PostExposeData()
         {
-            base.PostExposeData();
-            Scribe_Deep.Look(ref Skills, "skills");
+            Scribe_Collections.Look(ref Skills, "skills", LookMode.Deep);
         }
 
         /// <summary>
@@ -27,7 +25,7 @@ namespace SubcoreSkills.Comps
         /// <param name="pawn"></param>
         public override void Copy(Pawn pawn)
         {
-            Skills = pawn.skills.skills;
+            Skills = pawn.skills.skills.ConvertAll((skill) => new SubcoreSkill(skill));
         }
 
         /// <summary>

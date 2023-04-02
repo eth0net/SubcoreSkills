@@ -23,9 +23,9 @@ namespace SubcoreSkills.Comps
         /// <returns></returns>
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
         {
-            foreach (SkillRecord skill in Skills)
+            for (int i = Skills.Count; i-- > 0;)
             {
-                yield return new StatDrawEntry(StatCategoryDefOf.SubcoreSkills, skill.def.defName, skill.Level.ToString(), "Subcore skill level for " + skill.def.defName + ".", 10);
+                yield return Skills[i].StatDrawEntry();
             }
         }
     }
