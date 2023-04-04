@@ -1,5 +1,4 @@
-﻿using SubcoreInfo;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
 
 namespace SubcoreSkills
@@ -18,7 +17,8 @@ namespace SubcoreSkills
         /// SubcoreSkills constructor to load the mod and settings.
         /// </summary>
         /// <param name="content"></param>
-        public SubcoreSkills(ModContentPack content) : base(content) {
+        public SubcoreSkills(ModContentPack content) : base(content)
+        {
             settings = GetSettings<SubcoreSkillsSettings>();
         }
 
